@@ -4,6 +4,7 @@ server:
 
 #langchain4j配置
 langchain4j:
+  #openai
   open-ai:
     chat-model:
       #langchain4j模型
@@ -19,6 +20,7 @@ langchain4j:
       #应用程序发送给大模型的请求日志和响应日志
       log-requests: true
       log-responses: true
+  #ollama
   ollama:
     chat-model:
       #ollama
@@ -26,6 +28,12 @@ langchain4j:
       model-name: deepseek-r1:1.5b
       temperature: 0.8
       timeout: PT60S
+  #阿里百炼
+  community:
+    dashscope:
+      chat-model:
+        api-key: ${DASH_SCOPE_API_KEY}
+        model-name: qwen-max
 
 #系统日志级别
 logging:

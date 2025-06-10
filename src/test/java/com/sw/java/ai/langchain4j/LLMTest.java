@@ -1,5 +1,6 @@
 package com.sw.java.ai.langchain4j;
 
+import dev.langchain4j.community.model.dashscope.QwenChatModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,9 @@ public class LLMTest {
 
     @Autowired
     private OllamaChatModel ollamaChatModel;
+
+    @Autowired
+    private QwenChatModel qwenChatModel;
 
     @Test
     public void testGptDemo() {
@@ -31,6 +35,14 @@ public class LLMTest {
     }
 
     @Test
+    public void testSpringBoot() {
+        // 向模型提问
+        String answer = openAiChatModel.chat("你是谁");
+        // 输出结果
+        System.out.println(answer);
+    }
+
+    @Test
     public void testOllama() {
         // 向模型提问
         String answer = ollamaChatModel.chat("你好");
@@ -39,8 +51,10 @@ public class LLMTest {
     }
 
     @Test
-    public void testSpringBoot() {
-        String answer = openAiChatModel.chat("你是谁");
+    public void testQwen() {
+        // 向模型提问
+        String answer = qwenChatModel.chat("你好");
+        // 输出结果
         System.out.println(answer);
     }
 }
