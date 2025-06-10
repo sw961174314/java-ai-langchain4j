@@ -13,9 +13,18 @@ public class AIServiceTest {
     @Autowired
     private QwenChatModel qwenChatModel;
 
+    @Autowired
+    private Assistant assistant;
+
     @Test
     public void testChat() {
         Assistant assistant = AiServices.create(Assistant.class, qwenChatModel);
+        String answer = assistant.chat("你是谁");
+        System.out.println(answer);
+    }
+
+    @Test
+    public void testAssistant() {
         String answer = assistant.chat("你是谁");
         System.out.println(answer);
     }
