@@ -13,9 +13,14 @@ langchain4j:
       #model-name: gpt-4o-mini
 
       #deepseek模型
-      base-url: https://api.deepseek.com
-      api-key: ${DEEP_SEEK_API_KEY}
-      model-name: deepseek-chat
+      #base-url: https://api.deepseek.com
+      #api-key: ${DEEP_SEEK_API_KEY}
+      #model-name: deepseek-chat
+
+      #deepseek模型(阿里云百炼平台)
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: ${DASH_SCOPE_API_KEY}
+      model-name: deepseek-v3
 
       #应用程序发送给大模型的请求日志和响应日志
       log-requests: true
