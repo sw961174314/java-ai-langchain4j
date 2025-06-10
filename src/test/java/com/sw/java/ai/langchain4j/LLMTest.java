@@ -1,5 +1,6 @@
 package com.sw.java.ai.langchain4j;
 
+import dev.langchain4j.model.ollama.OllamaChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,9 @@ public class LLMTest {
 
     @Autowired
     private OpenAiChatModel openAiChatModel;
+
+    @Autowired
+    private OllamaChatModel ollamaChatModel;
 
     @Test
     public void testGptDemo() {
@@ -27,8 +31,16 @@ public class LLMTest {
     }
 
     @Test
+    public void testOllama() {
+        // 向模型提问
+        String answer = ollamaChatModel.chat("你好");
+        // 输出结果
+        System.out.println(answer);
+    }
+
+    @Test
     public void testSpringBoot() {
-        String answer = openAiChatModel.chat("我是谁");
+        String answer = openAiChatModel.chat("你是谁");
         System.out.println(answer);
     }
 }

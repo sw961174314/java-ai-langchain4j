@@ -6,12 +6,26 @@ server:
 langchain4j:
   open-ai:
     chat-model:
-      base-url: http://langchain4j.dev/demo/openai/v1
-      api-key: demo
-      model-name: gpt-4o-mini
+      #langchain4j模型
+      #base-url: http://langchain4j.dev/demo/openai/v1
+      #api-key: demo
+      #model-name: gpt-4o-mini
+
+      #deepseek模型
+      base-url: https://api.deepseek.com
+      api-key: ${DEEP_SEEK_API_KEY}
+      model-name: deepseek-chat
+
       #应用程序发送给大模型的请求日志和响应日志
       log-requests: true
       log-responses: true
+  ollama:
+    chat-model:
+      #ollama
+      base-url: http://localhost:11434
+      model-name: deepseek-r1:1.5b
+      temperature: 0.8
+      timeout: PT60S
 
 #系统日志级别
 logging:
