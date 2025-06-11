@@ -6,8 +6,9 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 
 // 如果配置了多个模型，需要指定使用特定模型，否则会报错
 // chatModel:聊天模型
-@AiService(wiringMode = EXPLICIT, chatModel = "qwenChatModel")
-public interface Assistant {
+// chatMemory:聊天记忆体
+@AiService(wiringMode = EXPLICIT, chatModel = "qwenChatModel", chatMemory = "chatMemory")
+public interface MemoryChatAssistant {
 
-    String chat(String userMessage);
+    String chat(String message);
 }
